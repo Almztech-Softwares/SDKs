@@ -21,7 +21,7 @@ cada SDK usa só o HTTP e o JSON da própria plataforma.
 | [Node.js](nodejs) | Node 18+, TypeScript | [`@almztech/sdk`](https://www.npmjs.com/package/@almztech/sdk) | `npm install @almztech/sdk@beta` |
 | [Python](python) | Python 3.9+ | [`almztech-sdk`](https://pypi.org/project/almztech-sdk/) | `pip install --pre almztech-sdk` |
 | [PHP](php) | PHP 8.1+ | [`almztech/sdk`](https://packagist.org/packages/almztech/sdk) | `composer require almztech/sdk:^0.2@beta` |
-| [Java](java) | Java 11+ | `br.com.almztech:almztech-sdk` | em breve no Maven Central |
+| [Java](java) | Java 11+ | [`br.com.almztech:almztech-sdk`](https://central.sonatype.com/artifact/br.com.almztech/almztech-sdk) | Maven: `br.com.almztech:almztech-sdk:0.2.0-beta.1` |
 | [Ruby](ruby) | Ruby 3.0+ | [`almztech-sdk`](https://rubygems.org/gems/almztech-sdk) | `gem install almztech-sdk --pre` |
 
 O README de cada pasta tem o exemplo de emissão completo, os webhooks, as consultas e a lista de erros.
