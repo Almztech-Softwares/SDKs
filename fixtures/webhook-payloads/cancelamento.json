@@ -1,0 +1,10 @@
+{
+  "_comentario": "Classificacao: 'notas' ausente, 'dadosCancelamento' presente -> Cancelamento (ver DESIGN.md secao 5).",
+  "protocolo": "PRD-exemplo-cancelamento",
+  "status": "PROCESSADO_COM_SUCESSO",
+  "mensagem": "",
+  "dadosCancelamento": {
+    "codigoNota": 3,
+    "numeroNota": "7106"
+  }
+}

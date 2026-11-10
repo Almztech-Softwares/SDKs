@@ -1,0 +1,5 @@
+{
+  "_comentario": "Resposta real de GET /NFSe/Consultar/999999: erro de negocio vem como HTTP 422 (nao 400), com corpo camelCase { mensagem }.",
+  "httpStatus": 422,
+  "body": { "mensagem": "Nota de código [999999] não encontrada." }
+}

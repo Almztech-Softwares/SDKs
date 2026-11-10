@@ -1,0 +1,22 @@
+{
+  "_comentario": "Payload recebido pelo parceiro na URL cadastrada em WebhookEvento.Emissao. Mesmo schema de ProtocoloResponse. Classificação: 'notas' presente -> Emissao (ver DESIGN.md secao 5).",
+  "protocolo": "SBOX-af74e9db-5e30-41bf-a23b-fcf44beee899",
+  "status": "PROCESSADO_COM_SUCESSO",
+  "mensagem": "",
+  "notas": [
+    {
+      "codigoNota": 1,
+      "tipoNota": "1",
+      "numero": "645536",
+      "rps": "79514",
+      "serie": "3",
+      "dataEmissao": "2026-08-04",
+      "situacao": "EMITIDA",
+      "codigoVerificacao": "7AFNVLZL",
+      "chaveAcesso": "26116042269624110000120000000000099992610000000001",
+      "xml": "https://api.almztech.com.br/nfse/xml/1",
+      "pdf": "https://api.almztech.com.br/nfse/pdf/1",
+      "protocolo": "SBOX-af74e9db-5e30-41bf-a23b-fcf44beee899"
+    }
+  ]
+}

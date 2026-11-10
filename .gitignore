@@ -1,0 +1,17 @@
+# Saídas de build e testes de cada linguagem
+dotnet/**/bin/
+dotnet/**/obj/
+dotnet/**/TestResults/
+dotnet/**/pacotes/
+nodejs/node_modules/
+nodejs/dist/
+nodejs/build-test/
+php/vendor/
+java/target/
+java/build/
+python/dist/
+python/build/
+python/**/__pycache__/
+python/**/*.egg-info/
+ruby/*.gem
+ruby/.bundle/

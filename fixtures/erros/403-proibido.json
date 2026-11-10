@@ -1,0 +1,5 @@
+{
+  "_comentario": "Exemplo ilustrativo de 403: operacao nao permitida para o perfil do usuario.",
+  "httpStatus": 403,
+  "body": { "mensagem": "Usuário não tem permissão para acessar este recurso." }
+}

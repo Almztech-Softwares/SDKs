@@ -1,0 +1,5 @@
+{
+  "_comentario": "Capturado ao vivo: GET /NFSe/ConsultarLista/HML sem header x-api-key.",
+  "httpStatus": 401,
+  "body": { "mensagem": "Token não informado" }
+}

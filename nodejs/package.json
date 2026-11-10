@@ -1,0 +1,50 @@
+{
+  "name": "@almztech/sdk",
+  "version": "0.2.0-beta.1",
+  "description": "SDK oficial Node.js/TypeScript para a API da Almztech (emissão, consulta, reconsulta e cancelamento de NFS-e, importação por planilha, Emitente, Webhook).",
+  "license": "MIT",
+  "author": "ALMZTECH SOFTWARES LTDA",
+  "homepage": "https://docs.almztech.com.br",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Almztech-Softwares/SDKs.git",
+    "directory": "nodejs"
+  },
+  "keywords": [
+    "nfse",
+    "nfs-e",
+    "nota-fiscal",
+    "nota-fiscal-de-servico",
+    "almztech",
+    "sdk"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.test.json && node --test build-test/test/",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.43",
+    "typescript": "5.9.3"
+  }
+}

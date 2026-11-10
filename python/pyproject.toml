@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "almztech-sdk"
+version = "0.2.0b1"
+description = "SDK oficial Python para a API da Almztech (emissão, consulta, reconsulta e cancelamento de NFS-e, importação por planilha, Emitente, Webhook)."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "ALMZTECH SOFTWARES LTDA" }]
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["nfse", "nfs-e", "nota-fiscal", "nota-fiscal-de-servico", "almztech", "sdk"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial :: Accounting",
+]
+# Sem dependências de runtime: HTTP e JSON da biblioteca padrão (DESIGN.md seção 2).
+dependencies = []
+
+[project.urls]
+Homepage = "https://docs.almztech.com.br"
+Documentation = "https://docs.almztech.com.br"
+Source = "https://github.com/Almztech-Softwares/SDKs"
+
+[tool.setuptools.packages.find]
+where = ["src"]

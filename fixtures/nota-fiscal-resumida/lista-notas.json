@@ -1,0 +1,33 @@
+{
+  "_comentario": "Resposta real de GET /NFSe/ConsultarLista/{ambiente}, com dados de teste ficticios. Lista de notas resumidas.",
+  "response": [
+    {
+      "codigoNota": 5,
+      "codigoEmitente": 1,
+      "cpfCnpjEmitente": "79660915924512",
+      "nomeEmitente": "Batista S.A.",
+      "numeroRPS": "71865",
+      "serieRPS": "3",
+      "loteRPS": 5,
+      "valorTotal": 6279.2172865072441,
+      "status": "PENDENTE_PREFEITURA",
+      "dataAutorizacao": "2026-07-31",
+      "tempoDeProcessamento": "2m 0s",
+      "protocolo": "SBOX-0296e103-d3c8-4e97-bdd3-c2662487c3fe"
+    },
+    {
+      "codigoNota": 4,
+      "codigoEmitente": 1,
+      "cpfCnpjEmitente": "79660915924512",
+      "nomeEmitente": "Batista S.A.",
+      "numeroRPS": "90985",
+      "serieRPS": "3",
+      "loteRPS": 4,
+      "valorTotal": 7852.0576244380291,
+      "status": "CANCELADA",
+      "dataAutorizacao": "2026-08-01",
+      "tempoDeProcessamento": "2m 0s",
+      "protocolo": "SBOX-89ba5142-9d91-4ff5-a9a5-daf0fa595e84"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "_comentario": "Classificacao: 'notas' e 'dadosCancelamento' ausentes, status == REJEITADO -> Rejeicao, motivo em 'mensagem' (ver DESIGN.md secao 5).",
+  "protocolo": "PRD-exemplo-rejeitado",
+  "status": "REJEITADO",
+  "mensagem": "Não há homologação disponível para este município."
+}

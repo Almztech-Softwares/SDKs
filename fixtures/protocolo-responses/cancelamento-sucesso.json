@@ -1,0 +1,9 @@
+{
+  "protocolo": "PRD-exemplo-cancelamento",
+  "status": "PROCESSADO_COM_SUCESSO",
+  "mensagem": "",
+  "dadosCancelamento": {
+    "codigoNota": 3,
+    "numeroNota": "7106"
+  }
+}

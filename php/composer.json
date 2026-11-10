@@ -1,0 +1,37 @@
+{
+    "name": "almztech/sdk",
+    "description": "SDK oficial PHP para a API da Almztech (emissão, consulta, reconsulta e cancelamento de NFS-e, importação por planilha, Emitente, Webhook).",
+    "type": "library",
+    "keywords": [
+        "nfse",
+        "nfs-e",
+        "nota-fiscal",
+        "nota-fiscal-de-servico",
+        "almztech",
+        "sdk"
+    ],
+    "homepage": "https://docs.almztech.com.br",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ALMZTECH SOFTWARES LTDA",
+            "homepage": "https://almztech.com.br"
+        }
+    ],
+    "support": {
+        "docs": "https://docs.almztech.com.br",
+        "source": "https://github.com/Almztech-Softwares/SDK-PHP"
+    },
+    "require": {
+        "php": ">=8.1",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Almztech\\Sdk\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": "php tests/TestesDoSdk.php"
+    }
+}

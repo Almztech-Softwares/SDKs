@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- br.com.almztech: o Maven Central verifica o namespace pelo DNS do domínio, e o da Almztech é almztech.com.br.
+       Os pacotes Java continuam com.almztech.sdk (o Central não exige que batam com o groupId). -->
+  <groupId>br.com.almztech</groupId>
+  <artifactId>almztech-sdk</artifactId>
+  <version>0.2.0-beta.1</version>
+  <packaging>jar</packaging>
+
+  <name>Almztech SDK</name>
+  <description>SDK oficial Java para a API da Almztech (emissão, consulta, reconsulta e cancelamento de NFS-e, importação por planilha, Emitente, Webhook).</description>
+
+  <url>https://docs.almztech.com.br</url>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/license/mit</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>ALMZTECH SOFTWARES LTDA</name>
+    <url>https://almztech.com.br</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <name>Almztech</name>
+      <organization>ALMZTECH SOFTWARES LTDA</organization>
+      <organizationUrl>https://almztech.com.br</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <url>https://github.com/Almztech-Softwares/SDKs/tree/main/java</url>
+    <connection>scm:git:https://github.com/Almztech-Softwares/SDKs.git</connection>
+    <developerConnection>scm:git:https://github.com/Almztech-Softwares/SDKs.git</developerConnection>
+  </scm>
+
+  <!-- Sem dependências de runtime: java.net.http e um JSON próprio (DESIGN.md). Os testes usam um runner
+       próprio (TestesDoSdk), executado pelo CI só com o JDK; o Maven aqui serve para empacotar e publicar. -->
+  <properties>
+    <maven.compiler.release>11</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <!-- O Central exige o jar de fontes e o de javadoc ao lado do jar principal. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals><goal>jar-no-fork</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.11.2</version>
+        <configuration>
+          <!-- O javadoc é em português e sem todas as tags: o doclint estrito falharia o build. -->
+          <doclint>none</doclint>
+          <quiet>true</quiet>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals><goal>jar</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- mvn -P publicacao deploy: assina e envia ao Central Portal (central.sonatype.com). Credenciais (token do portal)
+       no settings.xml com o id "central". A assinatura usa o BouncyCastle do próprio plugin (signer "bc"), sem gpg
+       instalado: a chave privada em texto ASCII vem da variável MAVEN_GPG_KEY e a senha dela de MAVEN_GPG_PASSPHRASE. -->
+  <profiles>
+    <profile>
+      <id>publicacao</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>3.2.7</version>
+            <configuration>
+              <signer>bc</signer>
+            </configuration>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals><goal>sign</goal></goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.sonatype.central</groupId>
+            <artifactId>central-publishing-maven-plugin</artifactId>
+            <version>0.7.0</version>
+            <extensions>true</extensions>
+            <configuration>
+              <publishingServerId>central</publishingServerId>
+              <!-- Sem publicar sozinho: o pacote fica validado no portal e alguém confirma o "Publish" lá. -->
+              <autoPublish>false</autoPublish>
+              <!-- Termina assim que o pacote sobe: a validação é conferida no portal. Esperar por ela fazia o
+                   plugin 0.7.0 quebrar ao ler a resposta de status (campo "warnings" que ele não conhece). -->
+              <waitUntil>uploaded</waitUntil>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

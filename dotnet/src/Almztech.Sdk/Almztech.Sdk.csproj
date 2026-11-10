@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Almztech.Sdk</RootNamespace>
+    <PackageId>Almztech.Sdk</PackageId>
+    <Version>0.2.0-beta.2</Version>
+    <Authors>Almztech</Authors>
+    <Company>ALMZTECH SOFTWARES LTDA</Company>
+    <Copyright>Copyright (c) 2026 ALMZTECH SOFTWARES LTDA</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://docs.almztech.com.br</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Almztech-Softwares/SDKs</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>nfse;nfs-e;nota-fiscal;nota-fiscal-de-servico;almztech;sdk</PackageTags>
+    <!-- Símbolos (.snupkg) vão junto para o nuget.org: quem depura o ERP entra no código do SDK. -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Description>SDK oficial .NET para a API da Almztech (emissão, consulta, reconsulta e cancelamento de NFS-e, importação por planilha, Emitente, Webhook).</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!-- CS1591 (doc XML ausente): exigir doc em todo enum member/propriedade pública é ruído
+         demais para uma v0.1 beta - reative antes da GA se quiser 100% de cobertura de doc. -->
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

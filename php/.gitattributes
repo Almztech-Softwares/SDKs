@@ -1,0 +1,5 @@
+# Fora do pacote baixado pelo Composer (o zip da versão): só src/, composer.json, README e LICENSE vão para o
+# vendor de quem instala.
+/tests export-ignore
+/DESENVOLVIMENTO.md export-ignore
+/.gitattributes export-ignore
